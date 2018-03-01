@@ -25,14 +25,15 @@ NEIGHBORS = udp://ip_neighbors1:14600 tcp://ip_neighbors2:14600 udp://ip_neighbo
 
 ### Start your node 
 
-After modify your NEIGHBORS's list, start your node like this :
+After modify your NEIGHBORS's list, you need to build :
 ```
-docker run hystenal/iotanode_dockerized:latest
+docker-compose build
 ```
-If you want to run it in background use -d tag :
+Then start it:
 ```
-docker run hystenal/iotanode_dockerized:latest -d
+docker-compose up
 ```
+You can detach with -d option 
 
 ### Built With
 

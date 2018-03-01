@@ -1,0 +1,20 @@
+version: '2.3'
+
+services:
+  iri_node: 
+    build:
+      context: ./iri
+      dockerfile: Dockerfile
+    container_name: iri_running
+    hostname: iota
+    volumes: 
+      - ./volumes/iota/iota.ini:/iri/iota.ini:ro
+      - ./volumes/iota/ixi:/iri/ixi:rw
+      - ./volumes/iota/mainnetdb:/iri/mainnetdb:rw
+      - /etc/localtime:/etc/localtime:ro
+    expose: 
+      - "5556"
+    ports: 
+      - "14600:14600/udp"
+      - "15600:15600/tcp"
+      - "14265:14265"
